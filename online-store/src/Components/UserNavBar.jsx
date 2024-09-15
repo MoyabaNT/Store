@@ -45,35 +45,34 @@ const UserNavBar = () => {
       </div>
 
       <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-lg text-gray-900 p-4 z-50"> {/* z-50 to ensure it's always visible */}
-        <div className="container mx-auto flex justify-between items-center">
-          <button className="flex-grow">
-            <HiOutlineSortAscending size={25} onClick={toggleSidebar} className="cursor-pointer text-purple-500" />
-          </button>
+  <div className="container mx-auto flex justify-between items-center">
+    <button>
+      <HiOutlineSortAscending size={25} onClick={toggleSidebar} className="cursor-pointer text-purple-500" />
+    </button>
 
-          <div className="flex-grow flex justify-center space-x-36 lg:mr-52"> {/* Centers the icons */}
-            <button>
-              <Link to="/HomeUser">
-                <ImHome size={25} className="cursor-pointer text-purple-500" />
-              </Link>
-            </button>
-            <button>
-              <Link to="/">
-                <HiOutlineShoppingBag size={25} className="cursor-pointer text-purple-500" />
-              </Link>
-            </button>
-            <button>
-              <Link to="/">
-                <HiOutlineShoppingCart size={25} className="cursor-pointer text-purple-500" />
-              </Link>
-            </button>
-          </div>
+    <div className="flex justify-evenly flex-grow max-w-md mx-auto"> {/* Ensures equal spacing for the icons */}
+      <button>
+        <Link to="/HomeUser">
+          <ImHome size={25} className="cursor-pointer text-purple-500" />
+        </Link>
+      </button>
+      <button>
+        <Link to="/">
+          <HiOutlineShoppingBag size={25} className="cursor-pointer text-purple-500" />
+        </Link>
+      </button>
+      <button>
+        <Link to="/">
+          <HiOutlineShoppingCart size={25} className="cursor-pointer text-purple-500" />
+        </Link>
+      </button>
+    </div>
 
-          {/* Sign In Button */}
-          <div className="text-purple-500 font-bold text-lg hover:text-purple-300 shadow-sm px-2 py-2 rounded-lg">
-            <UserButton forceRedirectUrl="/HomeUser" />
-          </div>
-        </div>
-      </nav>
+    <div className="text-purple-500 font-bold text-lg hover:text-purple-300 shadow-sm px-2 py-2 rounded-lg">
+      <UserButton forceRedirectUrl="/HomeUser" />
+    </div>
+  </div>
+</nav>
     </>
   );
 };
