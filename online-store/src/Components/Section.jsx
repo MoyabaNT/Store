@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../assets/MyLogo.png';
+
 const Section = () => {
   return (
     <div className="bg-gradient-to-r from-purple-500 to-indigo-500 py-4" >
