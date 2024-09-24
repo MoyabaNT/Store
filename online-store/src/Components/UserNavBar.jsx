@@ -62,7 +62,7 @@ const UserNavBar = () => {
         </Link>
       </button>
       <button>
-        <Link to="/">
+        <Link to="/Cart">
           <HiOutlineShoppingCart size={25} className="cursor-pointer text-purple-500" />
         </Link>
       </button>
