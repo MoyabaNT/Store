@@ -16,6 +16,7 @@ import MenClothing from "./afterSignIn/MenClothing";
 import OurProducts from "./afterSignIn/OurProducts";
 import OptionalCustomization from "./afterSignIn/OptionalCustomization";
 import Cart from "./afterSignIn/Cart";
+import HomeCart from "./Landing/HomeCart";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
     <Route path='/OurProducts' element={<OurProducts />} />
     <Route path='/OptionalCustomization' element={<OptionalCustomization />} />
     <Route path='/Cart' element={<Cart />} />
+    <Route path='/HomeCart' element={<HomeCart />} />
     </>
   )
 )

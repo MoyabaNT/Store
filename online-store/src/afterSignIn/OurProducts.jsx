@@ -1,6 +1,6 @@
-import React from 'react';
 import UserNavBar from '../Components/UserNavBar'
 import Section from '../Components/Section';
+import React, { useState } from 'react';
 import { TbBrightnessDownFilled } from "react-icons/tb";
 import firsthat from '../assets/afrobeauty.jpg';
 import second from '../assets/reddress.jpg';
@@ -44,541 +44,99 @@ import thirtynine from '../assets/yyy.jpg';
 import forthy from '../assets/ppp.jpg';
 
 const OurProducts = () => {
+  const [activeProduct, setActiveProduct] = useState(null);
+
+  const handleImageClick = (product) => {
+    setActiveProduct(product);
+  };
+
+  const closeFullscreen = () => {
+    setActiveProduct(null);
+  };
+
+  const products = [
+    { id: 1, img: firsthat, alt: "Purple bag", name: "Purple bag", price: "R 399.99" },
+    { id: 2, img: second, alt: "Red Bag", name: "Red Bag", price: "R 349.99" },
+    { id: 3, img: thirdhat, alt: "Flower Bag", name: "Flower Bag", price: "R 235.75" },
+    { id: 4, img: forth, alt: "Blue dress", name: "Blue dress", price: "R 213.25" },
+    { id: 5, img: fifth, alt: "Yello Bag", name: "Yello Bag", price: "R 350" },
+    { id: 6, img: sixth, alt: "Blue dress", name: "Blue dress", price: "R 349.99" },
+    { id: 7, img: seventh, alt: "Blue Hat", name: "Blue hat", price: "R 369.99" },
+    { id: 8, img: eigth, alt: "Red Bag", name: "Red Bag", price: "R 229.39" },
+    { id: 9, img: nineth, alt: "Blue pants", name: "Blue Pants", price: "R 149.99" },
+    { id: 10, img: tenth, alt: "Brown dress", name: "Brown dress", price: "R 349.99" },
+    { id: 11, img: eleventh, alt: "Double ruffles", name: "Double ruffles", price: "R 389.70" },
+    { id: 12, img: twelveth, alt: "Fluffy hat", name: "Fluffy hat", price: "R 359.69" },
+    { id: 13, img: thirteenth, alt: "Brown ruffles", name: "Brown ruffles", price: "R 249.99" },
+    { id: 14, img: forteenth, alt: "Brown pants", name: "Brown pants", price: "R 139.99" },
+    { id: 15, img: fifteenth, alt: "Ruffle hat", name: "Ruffle hat", price: "R 349.99" },
+    { id: 16, img: sixteenth, alt: "Lime bag", name: "Lime Bag ", price: "R 329.29" },
+    { id: 17, img: seventeen, alt: "Side bag ", name: " Side bag", price: "R 149.99" },
+    { id: 18, img: eighteen, alt: "Brown dress", name: "Ruffle hat", price: "R 249.99" },
+    { id: 19, img: nineteen, alt: "Blue 2 piece ", name: " Blue 2 piece", price: "R 349.99" },
+    { id: 20, img: twenty, alt: "blue dress", name: "Blue Dress", price: "R 319.99" },
+    { id: 21, img: twentyone, alt: "Yellow dress", name: "Yellow dress", price: "R 449.99" },
+  ];
   return (
     <div className="relative min-h-screen flex flex-col">
-      <Section />
       <UserNavBar />
+      <Section />
       <div className="pt-16 pb-16 px-16 flex-grow">
-      <div className='flex'>
-      <label className='px-6'>View Catalogue</label>
-      <label className=' text-purple-500'> <TbBrightnessDownFilled size={30} /></label>
-      </div>
-
-        <div className="py-4 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={firsthat}
-              alt="greengirl"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Dress</h3>
-              <p className="text-gray-700">Price: R 320.00</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={second}
-              alt="girlred"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Dess</h3>
-              <p className="text-gray-700">Price: R 379.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirdhat}
-              alt="bag"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Flower Bag</h3>
-              <p className="text-gray-700">Price: R 299.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={forth}
-              alt="Brownboy"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Dress</h3>
-              <p className="text-gray-700">Price: R 279.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={fifth}
-              alt="yellowdress"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Yellow Dress </h3>
-              <p className="text-gray-700">Price: R 349.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={sixth}
-              alt="purpledollfit"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Dress</h3>
-              <p className="text-gray-700">Price: R 255.93</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={seventh}
-              alt="hat"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Ruffle Hat</h3>
-              <p className="text-gray-700">Price: R 277.69</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={eigth}
-              alt="Crochet Bag"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Crochet Bag</h3>
-              <p className="text-gray-700">Price: R 233.65</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={nineth}
-              alt="grannysquare"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Palazzo Pants</h3>
-              <p className="text-gray-700">Price: R 264.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={tenth}
-              alt="browndress "
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Summer dress</h3>
-              <p className="text-gray-700">Price: R 250.00</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={eleventh}
-              alt="bluepants"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Pants</h3>
-              <p className="text-gray-700">Price: R 239.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twelveth}
-              alt="pinkdress"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Summer Dress </h3>
-              <p className="text-gray-700">Price: R 249.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirteenth}
-              alt="yellowgown"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Ball Dress </h3>
-              <p className="text-gray-700">Price: R 399.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={forteenth}
-              alt="pinkhimandress"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Summer Dress </h3>
-              <p className="text-gray-700">Price: R 379.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={fifteenth}
-              alt="hat"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Ruffle Hat </h3>
-              <p className="text-gray-700">Price: R 249.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={sixteenth}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Ruffle Hat </h3>
-              <p className="text-gray-700">Price: R 249.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={seventeen}
-              alt="greendress"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Dress </h3>
-              <p className="text-gray-700">Price: R 289.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={eighteen}
-              alt="gray"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Dress </h3>
-              <p className="text-gray-700">Price: R 249.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={nineteen}
-              alt="grwearay"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Winter Wear </h3>
-              <p className="text-gray-700">Price: R 269.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twenty}
-              alt="lime"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Bag </h3>
-              <p className="text-gray-700">Price: R 329.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentyone}
-              alt="grjersyeay"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Sweater </h3>
-              <p className="text-gray-700">Price: R 249.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentytwo}
-              alt="bluepants"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Palazzo Pants  </h3>
-              <p className="text-gray-700">Price: R 299.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentythree}
-              alt="grpanthsay"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Pants </h3>
-              <p className="text-gray-700">Price: R 189.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentyfour}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold"> Ruffle Hat </h3>
-              <p className="text-gray-700">Price: R 369.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentyfive}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold"> Ruffle Hat </h3>
-              <p className="text-gray-700">Price: R 339.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentysix}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold"> Ruffle Hat </h3>
-              <p className="text-gray-700">Price: R 379.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentyseven}
-              alt="wear"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Winter Wear </h3>
-              <p className="text-gray-700">Price: R 389.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentyeight}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold"> Ruffle Hat </h3>
-              <p className="text-gray-700">Price: R 259.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={twentynine}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold"> Ruffle Hat </h3>
-              <p className="text-gray-700">Price: R 269.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirty}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Vest & shorts</h3>
-              <p className="text-gray-700">Price: R 389.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtyone}
-              alt="dress"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Doll Dress</h3>
-              <p className="text-gray-700">Price: R 189.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtytwo}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Bag</h3>
-              <p className="text-gray-700">Price: R 389.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtythree}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Dress & Hat</h3>
-              <p className="text-gray-700">Price: R 289.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtyfour}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Bag</h3>
-              <p className="text-gray-700">Price: R 369.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtyfive}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Ruffle Hat </h3>
-              <p className="text-gray-700">Price: R 239.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtysix}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Bag</h3>
-              <p className="text-gray-700">Price: R 389.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtyseven}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Sexy Dress</h3>
-              <p className="text-gray-700">Price: R 489.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtyeight}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Bag</h3>
-              <p className="text-gray-700">Price: R 239.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={thirtynine}
-              alt="ruffles"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Bag</h3>
-              <p className="text-gray-700">Price: R 329.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-          <div className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-            <img
-              src={forthy}
-              alt="bag"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
-              <h3 className="text-purple-500 font-semibold">Bag</h3>
-              <p className="text-gray-700">Price: R 349.99</p>
-              <button className="text-xs text-gray-900 hover:text-white bg-purple-600 py-2 px-2">Add to cart</button>
-              <button className="text-xs text-gray-900 hover:text-white py-2 ml-6 px-2">View</button>
-            </div>
-          </div>
-
+        <div className='flex'>
+          <label className='px-6'>View Catalogue</label>
+          <label className='text-purple-500'> <TbBrightnessDownFilled size={30} /></label>
         </div>
+
+        {activeProduct ? (
+          <div className="fixed top-0 left-0 w-full h-full bg-white z-50 flex items-center justify-center p-4">
+            <div className="flex flex-col md:flex-row items-start w-full h-full">
+              <div className="w-full md:w-3/4 lg:max-w-[50vw] lg:max-h-[80vh] h-auto overflow-hidden">
+                <img
+                  src={activeProduct.img}
+                  alt={activeProduct.alt}
+                  className="w-full h-full object-contain"
+                  onClick={closeFullscreen}
+                />
+              </div>
+              <div className="w-full md:w-1/4 p-4 bg-white shadow-lg md:ml-4 mt-4 md:mt-0">
+                <h3 className="text-purple-500 font-semibold text-3xl">{activeProduct.name}</h3>
+                <p className="text-gray-700 text-xl mt-4">Price: {activeProduct.price}</p>
+                <div className='flex items-center justify-center '>
+                  <button className="text-sm text-white bg-purple-600 p-2 w-full">Add to cart</button>
+                    </div>
+                <button
+                  className="mt-4 px-4 py-2 bg-purple-500 text-white rounded"
+                  onClick={closeFullscreen}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="relative shadow-lg w-full h-96 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+              >
+                <img
+                  src={product.img}
+                  alt={product.alt}
+                  className="w-full h-full object-cover"
+                  onClick={() => handleImageClick(product)}
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-75 p-2">
+                  <h3 className="text-purple-500 font-semibold">{product.name}</h3>
+                  <p className="text-gray-700">Price: {product.price}</p>
+                  <div className='flex items-center justify-center '>
+                  <button className="text-sm text-white bg-purple-600 p-2 w-full">Add to cart</button>
+                    </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

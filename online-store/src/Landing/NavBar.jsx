@@ -33,16 +33,11 @@ const NavBar = () => {
           <Link to="/customize">
             <li className="hover:text-purple-300 transition-colors duration-200">Customize</li>
           </Link>
-          <li className="hover:text-purple-300 transition-colors duration-200">Category</li>
-          <ul className="ml-4">
-            <li className="hover:text-purple-300 transition-colors duration-200">
-              <Link to="/Women">Women Clothing</Link>
-            </li>
-            <li className="hover:text-purple-300 transition-colors duration-200">
-              <Link to="/men">Men Clothing</Link>
-            </li>
           </ul>
-        </ul>
+          <p className='p-4'>Want to see more? 
+            <SignInButton forceRedirectUrl="/HomeUser" className='hover:text-purple-400 ml-2'/>
+          </p>
+          <p className='font-bold hover:text-purple-500'>You can view our full catalogue after signing in</p>
       </div>
 
       {/* Bottom NavBar */}
@@ -61,7 +56,7 @@ const NavBar = () => {
               </Link>
             </button>
             <button>
-              <Link to="/HomeShop">
+              <Link to="/products">
                 <HiOutlineShoppingBag size={25} className="cursor-pointer text-purple-500" />
               </Link>
             </button>
